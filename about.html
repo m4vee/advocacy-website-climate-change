@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Group & Design Rationale — TINDIG Philippines</title>
+  <meta name="description" content="Meet the student group behind TINDIG and discover how the Elements of Art and Principles of Design were applied to craft this advocacy platform.">
+
+  <!-- [PRINCIPLE: HARMONY] Typography Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Tindig Homepage">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v8"></path>
+          <path d="m4.93 10.93 1.41 1.41"></path>
+          <path d="M2 18h2"></path>
+          <path d="M20 18h2"></path>
+          <path d="m19.07 10.93-1.41 1.41"></path>
+          <path d="M22 22H2"></path>
+          <path d="m8 22 4-10 4 10"></path>
+        </svg>
+        <span>TINDIG</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="story.html" class="nav-link">The Impact</a>
+        <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+        <a href="take-action.html" class="nav-link">Take Action</a>
+        <a href="about.html" class="nav-link active">Our Group</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle dark/light mode">
+          <svg id="themeIcon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="take-action.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">Pledge Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobileDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="story.html" class="nav-link">The Impact</a>
+    <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+    <a href="take-action.html" class="nav-link">Take Action</a>
+    <a href="about.html" class="nav-link active">Our Group</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Section 1: Project Purpose -->
+    <section class="section" style="padding-bottom: var(--space-lg); position: relative; overflow: hidden;" aria-labelledby="about-purpose-heading">
+      <div class="floating-accent-element" style="top: -10px; right: 8%; width: 260px; height: 260px; background: radial-gradient(circle, rgba(11, 60, 93, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+
+      <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+        <span class="reveal-scale" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-ocean); display: block; margin-bottom: 0.5rem;">
+          Academic Portfolio & Advocacy Mission
+        </span>
+        <div class="heading-accent">
+          <h1 id="about-purpose-heading" class="reveal">Why We Built TINDIG</h1>
+        </div>
+        <p class="reveal" style="font-size: 1.15rem; margin-bottom: 1.25rem; line-height: 1.75;">
+          <strong>TINDIG</strong> ("To Stand Firm / Rise") was created for our college <em>Digital Interface Design</em> capstone project. Our goal was to reject sterile, generic web templates in favor of a deeply intentional design language that mirrors the ecological and cultural reality of the Philippine archipelago.
+        </p>
+        <p class="reveal" style="margin-bottom: 1.25rem; line-height: 1.75;">
+          Too often, climate discourse portrays Filipinos as helpless statistics or celebrates shallow resilience. We designed this interface to embody <strong>collective identity</strong>: when college students, mangrove planters, and jeepney commuters stand together, individual vulnerabilities converge into sovereign, collective power.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         [NEW ENHANCED COMPONENT: BALANCE & HARMONY] Group Core Values
+         ======================================================================== -->
+    <section class="container" style="margin-bottom: var(--space-2xl);" aria-labelledby="values-heading">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+        <div class="heading-accent center">
+          <h2 id="values-heading" style="font-size: 1.6rem;">Our Three Guiding Pillars</h2>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card reveal-left">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">01. Paninindigan (Conviction)</h3>
+          <p style="font-size: 0.9rem; color: var(--color-charcoal-muted); line-height: 1.6;">
+            We stand with frontline communities facing storm surges and land subsidence, treating digital storytelling as an act of public advocacy.
+          </p>
+        </div>
+
+        <div class="value-card reveal-scale">
+          <div class="value-icon" style="color: var(--color-forest); background: rgba(46, 125, 91, 0.1);" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">02. Bayanihan (Collective Action)</h3>
+          <p style="font-size: 0.9rem; color: var(--color-charcoal-muted); line-height: 1.6;">
+            Reframing sustainability away from isolated individual guilt toward communal organizing, mangrove planting, and solidarity.
+          </p>
+        </div>
+
+        <div class="value-card reveal-right">
+          <div class="value-icon" style="color: var(--color-sunset); background: rgba(232, 106, 23, 0.1);" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">03. Katotohanan (Climatic Truth)</h3>
+          <p style="font-size: 0.9rem; color: var(--color-charcoal-muted); line-height: 1.6;">
+            Grounded in empirical scientific evidence from PAGASA and IPCC reports to counter disinformation and historical amnesia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM PROFILE CARDS: 5 Core Roles (College Group Project) -->
+    <section class="section section-muted" aria-labelledby="team-heading">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+          <div class="heading-accent center">
+            <h2 id="team-heading" class="reveal">Meet The Student Collective</h2>
+          </div>
+          <p class="reveal" style="margin: 0 auto;">Five dedicated student roles collaborating across research, visual craft, front-end code, and oral defense.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1: Lead Designer -->
+          <article class="team-card reveal-left">
+            <div class="team-avatar" aria-label="Avatar for Juan Dela Cruz">JD</div>
+            <h3 class="team-name">Paul Angelo Dalipe</h3>
+            <div class="team-role">Lead Developer</div>
+            <p class="team-desc">
+              Crafted the typography hierarchy, wave SVG linework, color palette system, and visual balance.
+            </p>
+          </article>
+
+          <!-- Member 2: Researcher -->
+          <article class="team-card reveal-scale">
+            <div class="team-avatar" style="background: linear-gradient(135deg, var(--color-forest), #16537e);" aria-label="Avatar for Maria Clara Santos">MS</div>
+            <h3 class="team-name">Brian Dapito</h3>
+            <div class="team-role">Researcher</div>
+            <p class="team-desc">
+              Curated climatic data from PAGASA, IPCC AR6, and localized community impact case studies.
+            </p>
+          </article>
+
+          <!-- Member 3: Content Writer -->
+          <article class="team-card reveal-scale">
+            <div class="team-avatar" style="background: linear-gradient(135deg, var(--color-sunset), #c2410c);" aria-label="Avatar for Carlos Joaquin">CJ</div>
+            <h3 class="team-name">Mave Rick Sandoval</h3>
+            <div class="team-role">Frontend Developer</div>
+            <p class="team-desc">
+              Authored the collective narrative, Bayanihan rhetoric, and community voice storytelling.
+            </p>
+          </article>
+
+          <!-- Member 4: Developer -->
+          <article class="team-card reveal-scale">
+            <div class="team-avatar" style="background: linear-gradient(135deg, var(--color-ocean), #0284c7);" aria-label="Avatar for Bea Alcantara">BA</div>
+            <h3 class="team-name">Krislyn Sayat</h3>
+            <div class="team-role">Researcher</div>
+            <p class="team-desc">
+              Engineered semantic HTML5, responsive CSS3, vanilla JS pledge tracker, and WCAG AA accessibility.
+            </p>
+          </article>
+
+          <!-- Member 5: Presenter -->
+          <article class="team-card reveal-right">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #0d9488, var(--color-ocean));" aria-label="Avatar for Dominic Reyes">DR</div>
+            <h3 class="team-name">John Carlo Trajico</h3>
+            <div class="team-role">Frontend Developer</div>
+            <p class="team-desc">
+              Coordinated group slide structure, live interactive walkthrough, and Q&A defense readiness.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         [NEW ENHANCED COMPONENT: COLOR, TEXTURE, PROPORTION]
+         Interactive Design Tokens Swatch Board
+         ======================================================================== -->
+    <section class="container" style="margin-bottom: var(--space-2xl);" aria-labelledby="tokens-heading">
+      <div class="design-tokens-board reveal-scale">
+        <div class="heading-accent">
+          <h2 id="tokens-heading" style="font-size: 1.6rem;">Design System Token Swatches</h2>
+        </div>
+        <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+          Concrete tokens defined in <code>style.css</code> embodying the Elements of Art and Principles of Design:
+        </p>
+
+        <!-- Color Swatch Grid -->
+        <div class="swatch-grid">
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #0B3C5D;"></div>
+            <div class="swatch-details">
+              <span class="swatch-title">Ocean Blue</span>
+              <span class="swatch-hex">#0B3C5D · Water & Trust</span>
+            </div>
+          </div>
+
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #2E7D5B;"></div>
+            <div class="swatch-details">
+              <span class="swatch-title">Forest Green</span>
+              <span class="swatch-hex">#2E7D5B · Hope & Mangroves</span>
+            </div>
+          </div>
+
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #E86A17;"></div>
+            <div class="swatch-details">
+              <span class="swatch-title">Sunset Orange</span>
+              <span class="swatch-hex">#E86A17 · Heat & Urgency</span>
+            </div>
+          </div>
+
+          <div class="swatch-card">
+            <div class="swatch-color" style="background-color: #F7F3EA; border-bottom: 1px solid rgba(0,0,0,0.08);"></div>
+            <div class="swatch-details">
+              <span class="swatch-title">Archipelago Sand</span>
+              <span class="swatch-hex">#F7F3EA · Organic Canvas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography & Radius Specimen Strip -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
+          <div style="font-size: 0.9rem; color: var(--color-charcoal-muted);">
+            <strong style="color: var(--color-ocean);">Heading Specimen (Fraunces Serif):</strong> "Sama-sama tayong titindig para sa kalikasan."
+          </div>
+          <div style="font-size: 0.85rem; color: var(--color-charcoal-muted);">
+            <strong style="color: var(--color-ocean);">Body Specimen (Plus Jakarta Sans):</strong> Optimized for 65–75 character optimal eye-tracking measure at 1.7 line height.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN RATIONALE SECTION: Elements of Art & Principles Matrix -->
+    <section class="section" style="padding-top: 0;" aria-labelledby="design-rationale-heading">
+      <div class="container">
+        <div style="max-width: 860px; margin: 0 auto;">
+          <div class="heading-accent">
+            <h2 id="design-rationale-heading" class="reveal">How Our Design Tells This Story</h2>
+          </div>
+          <p class="reveal" style="margin-bottom: 2rem;">
+            Every visual decision in TINDIG was selected with rigorous adherence to foundational art and design tenets to communicate the urgency of the Philippine climate crisis:
+          </p>
+
+          <!-- Matrix Table with Reveal Animation -->
+          <div class="matrix-table-wrapper reveal-scale">
+            <table class="matrix-table" aria-label="Elements of Art and Principles of Design Application Matrix">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 25%;">Concept</th>
+                  <th scope="col" style="width: 35%;">Implementation in TINDIG</th>
+                  <th scope="col" style="width: 40%;">Symbolism & Narrative Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Element: Line</strong></td>
+                  <td>Flowing SVG wave section dividers, vertical story timeline track, accent lines under headers.</td>
+                  <td>Contrasts organic curved water lines (flood, tide, sea) with straight vertical timeline (unyielding time, accountability).</td>
+                </tr>
+                <tr>
+                  <td><strong>Element: Color</strong></td>
+                  <td>Deep Ocean Blue (#0B3C5D), Forest Green (#2E7D5B), Sunset Orange (#E86A17), Sand (#F7F3EA).</td>
+                  <td>Blue conveys depth and water danger; green symbolizes ecological regrowth; orange triggers solar urgency without cliché warning reds.</td>
+                </tr>
+                <tr>
+                  <td><strong>Element: Texture</strong></td>
+                  <td>Subtle SVG grain overlay, frosted glassmorphism card in hero, layered multi-level box shadows.</td>
+                  <td>Creates a tactile, documentary paper feel; prevents flat digital sterility and honors physical grassroots placards.</td>
+                </tr>
+                <tr>
+                  <td><strong>Element: Space</strong></td>
+                  <td>Generous 8px-based spacing scale, negative space around hero headline, overlapping card offsets.</td>
+                  <td>Whitespace gives gravitas and solemnity to heavy loss statistics; overlapping layers suggest tidal inundation.</td>
+                </tr>
+                <tr>
+                  <td><strong>Element: Form / Shape</strong></td>
+                  <td>Rotating organic blob shapes in Bayanihan section juxtaposed with rigid geometric fact cards.</td>
+                  <td>Juxtaposes wild untamed nature (organic shapes) with human-built engineering and policy data (rectangles).</td>
+                </tr>
+                <tr>
+                  <td><strong>Element: Perspective</strong></td>
+                  <td>Parallax scroll on hero backdrop, scale contrast (oversized stat counters), hover depth lift.</td>
+                  <td>Places the visitor physically on the coastline looking out to sea, creating immediate emotional immersion.</td>
+                </tr>
+                <tr>
+                  <td><strong>Principle: Balance</strong></td>
+                  <td>Asymmetrical hero layout (editorial left, glass card right); symmetrical 3-column impact cards.</td>
+                  <td>Asymmetry creates dynamic tension and movement; symmetry in data cards provides grounded analytical stability.</td>
+                </tr>
+                <tr>
+                  <td><strong>Principle: Rhythm</strong></td>
+                  <td>Alternating light/dark sections, repeating wave breaks, alternating left/right timeline nodes.</td>
+                  <td>Mimics oceanic wave intervals and seasonal monsoon cycles; paces the user's reading breath.</td>
+                </tr>
+                <tr>
+                  <td><strong>Principle: Emphasis</strong></td>
+                  <td>High-contrast Sunset Orange CTA buttons and oversized tabular numerical metrics.</td>
+                  <td>Directs the human eye immediately to actionable focal points; prevents cognitive overwhelm.</td>
+                </tr>
+                <tr>
+                  <td><strong>Principle: Harmony</strong></td>
+                  <td>Fraunces serif paired with Plus Jakarta Sans; consistent border radii and 60-30-10 palette balance.</td>
+                  <td>Produces unified curatorial dignity; avoids fragmented, noisy "AI slop" aesthetics.</td>
+                </tr>
+                <tr>
+                  <td><strong>Principle: Proportion</strong></td>
+                  <td>1.25 type scale ratio, 65–75 character line length, 88vh hero, 1:1 circular SVG progress gauge.</td>
+                  <td>Ensures effortless legibility, natural eye travel, and harmonious geometric proportions across viewports.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TINDIG PILIPINAS</h3>
+          <p>
+            An advocacy web project demonstrating the visible integration of the Elements of Art and Principles of Design for Digital Interface Design. Dedicated to the youth and frontline communities of the Philippine archipelago.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">The Impact Timeline</a></li>
+            <li><a href="gallery.html">Voices & Visuals</a></li>
+            <li><a href="take-action.html">Take Action</a></li>
+            <li><a href="about.html">About & Design Matrix</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Context</h4>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+            Digital Interface Design (DID301)<br>
+            Group Capstone Presentation<br>
+            Role Distribution & Design Matrix.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TINDIG Climate Action Collective.</div>
+        <div>Collaborative Design for Social Good</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

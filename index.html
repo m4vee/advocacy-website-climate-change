@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TINDIG — Rise Together for Climate Action in the Philippines</title>
+  <meta name="description" content="A digital advocacy storytelling platform raising awareness and mobilizing Filipino youth against climate change impacts.">
+  <meta property="og:title" content="TINDIG — Rise Together for Climate Action in the Philippines">
+  <meta property="og:description" content="We are one community facing one climate crisis. Discover how typhoons, rising seas, and urban heat impact Filipino lives—and take action together.">
+  <meta property="og:type" content="website">
+
+  <!-- [PRINCIPLE: HARMONY] Typography Pairing: Fraunces (Editorial Serif) & Plus Jakarta Sans (Clean Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <!-- [TOP BAR CONTRACT] Single-row, 3-zone Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <!-- Zone 1: Brand Wordmark -->
+      <a href="index.html" class="brand-logo" aria-label="Tindig Homepage">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v8"></path>
+          <path d="m4.93 10.93 1.41 1.41"></path>
+          <path d="M2 18h2"></path>
+          <path d="M20 18h2"></path>
+          <path d="m19.07 10.93-1.41 1.41"></path>
+          <path d="M22 22H2"></path>
+          <path d="m8 22 4-10 4 10"></path>
+        </svg>
+        <span>TINDIG</span>
+      </a>
+
+      <!-- Zone 2: Navigation Links -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="story.html" class="nav-link">The Impact</a>
+        <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+        <a href="take-action.html" class="nav-link">Take Action</a>
+        <a href="about.html" class="nav-link">Our Group</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Zone 3: Actions (Theme Toggle & Primary Action) -->
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle dark/light mode">
+          <svg id="themeIcon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="take-action.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">Pledge Now</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="story.html" class="nav-link">The Impact</a>
+    <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+    <a href="take-action.html" class="nav-link">Take Action</a>
+    <a href="about.html" class="nav-link">Our Group</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         [PRINCIPLE: BALANCE & PERSPECTIVE] Hero Section
+         - Asymmetrical Balance: Bold editorial copy on left, glass card & depth on right
+         - Perspective: Parallax scroll movement on atmospheric coastal backdrop
+         ======================================================================== -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-background-wrapper">
+        <img src="./assets/images/hero.jpg" alt="Filipino coastal community along shoreline facing dramatic ocean weather" class="hero-background-img">
+        <div class="hero-overlay-scrim"></div>
+      </div>
+
+      <div class="container hero-content-wrapper">
+        <div class="hero-grid">
+          <div class="hero-text reveal">
+            <!-- [ELEMENT: LINE] Accent kicker -->
+            <span class="hero-badge-tag">Advocacy & Youth Action · Philippines</span>
+            <h1 class="hero-title">
+              Our islands are sinking. <br>
+              <span>Together, we rise.</span>
+            </h1>
+            <p class="hero-tagline">
+              The Philippines produces less than 0.4% of global carbon emissions, yet our communities endure the deadliest typhoons, rising seas, and record heat waves. We are not mere victims—we are a united generation standing for climate justice.
+            </p>
+            <div class="hero-ctas">
+              <a href="story.html" class="btn btn-primary">
+                Learn the Story
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+              <a href="take-action.html" class="btn btn-outline-white">Take Action Together</a>
+            </div>
+          </div>
+
+          <!-- [ELEMENT: TEXTURE & FORM] Tactile Glassmorphism Card (Overlapping Layer) -->
+          <div class="hero-glass-card reveal">
+            <!-- [ELEMENT: FORM/SHAPE] Organic Droplet & Shield motif -->
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffd299" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span style="font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; color: #ffd299;">Our Collective Creed</span>
+            </div>
+            <h3>Hindi tayo nag-iisa.</h3>
+            <p>
+              "We breathe the same air, endure the same floods, and rebuild under the same tropical sun. When student leaders, coastal fishermen, and urban neighbors stand as one community, our collective voice is louder than any storm."
+            </p>
+            <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span>7,641 Islands</span>
+              <span style="color: #ffd299; font-weight: 600;">One Shared Future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         [PRINCIPLE: EMPHASIS & PROPORTION] Animated Stats Counter Strip
+         - Scale Contrast: Huge tabular figures in Sunset Orange against subtle cards
+         ======================================================================== -->
+    <section class="container stats-strip" aria-label="Key Climate Statistics">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number">
+            <span class="counter-val" data-target="20">0</span>
+            <span class="suffix">+</span>
+          </div>
+          <div class="stat-label">Tropical Cyclones / Year</div>
+          <p class="stat-desc">The Philippines enters the Pacific storm corridor annually, facing super typhoons of unprecedented category-5 strength.</p>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-number">
+            <span class="counter-val" data-target="60">0</span>
+            <span class="suffix">%</span>
+          </div>
+          <div class="stat-label">Coastal Population</div>
+          <p class="stat-desc">Over 65 million Filipinos live in coastal cities and municipalities vulnerable to storm surges and permanent inundation.</p>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-number">
+            <span class="counter-val" data-target="3">0</span>
+            <span class="suffix">x</span>
+          </div>
+          <div class="stat-label">Sea Rise vs. Global Mean</div>
+          <p class="stat-desc">Philippine coastal waters are rising at triple the global average due to shifting Pacific currents and land subsidence.</p>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-number">
+            <span class="counter-val" data-target="48">0</span>
+            <span class="suffix">°C</span>
+          </div>
+          <div class="stat-label">Extreme Heat Index</div>
+          <p class="stat-desc">Dangerous heat indices regularly trigger nationwide school shutdowns and imperil public transportation and informal laborers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [ELEMENT: LINE] Flowing Wave SVG Divider (Water Motif) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,50 L1200,120 L0,120 Z" class="wave-fill-surface"></path>
+      </svg>
+    </div>
+
+    <!-- ========================================================================
+         [PRINCIPLE: BALANCE & RHYTHM] 3-Column Climate Impact Pillars
+         - Symmetrical balance across 3 cards
+         - Rhythm: repeating card structures with tactile hover lift
+         ======================================================================== -->
+    <section class="section" style="background-color: var(--color-surface);" aria-labelledby="impacts-title">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto var(--space-2xl);">
+          <div class="heading-accent center">
+            <h2 id="impacts-title">The Three Frontlines We Face</h2>
+          </div>
+          <p style="margin: 0 auto;">
+            Climate change is not a theoretical forecast in the Philippine archipelago—it is an everyday disruption to classrooms, livelihood, and family homes.
+          </p>
+        </div>
+
+        <div class="cards-grid-3">
+          <!-- Card 1: Typhoons -->
+          <article class="impact-card reveal">
+            <div class="impact-card-media">
+              <img src="./assets/images/typhoon.jpg" alt="Community clearing fallen trees and debris after a severe typhoon" class="impact-card-img" loading="lazy">
+            </div>
+            <div class="impact-card-body">
+              <span class="card-tag">Frontline 01 · Extreme Weather</span>
+              <h3 class="impact-card-title">Super Typhoons & Stronger Surges</h3>
+              <p class="impact-card-text">
+                Warming sea-surface temperatures in the Western Pacific rapidly supercharge typhoons before landfall, leaving coastal provinces like Leyte, Samar, and Cagayan facing wind gusts exceeding 280 km/h.
+              </p>
+              <a href="story.html#typhoons" class="impact-card-link">
+                Read the typhoon chronology
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Flooding -->
+          <article class="impact-card reveal">
+            <div class="impact-card-media">
+              <img src="./assets/images/hero.jpg" alt="Stilt houses and high-water marks in coastal fishing community" class="impact-card-img" loading="lazy">
+            </div>
+            <div class="impact-card-body">
+              <span class="card-tag">Frontline 02 · Inundation</span>
+              <h3 class="impact-card-title">Chronic Tidal & Urban Flooding</h3>
+              <p class="impact-card-text">
+                Low-lying centers such as Malabon, Navotas, and Bulacan experience daily "lubog" even on sunny days during full moon high tides, accelerated by unchecked groundwater extraction and silted river channels.
+              </p>
+              <a href="story.html#flooding" class="impact-card-link">
+                Examine flood data
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Urban Heat -->
+          <article class="impact-card reveal">
+            <div class="impact-card-media">
+              <img src="./assets/images/heat.jpg" alt="Passenger jeepney and commuters under blazing summer sun in Manila" class="impact-card-img" loading="lazy">
+            </div>
+            <div class="impact-card-body">
+              <span class="card-tag">Frontline 03 · Heat Index</span>
+              <h3 class="impact-card-title">Urban Heat Islands & Crop Failure</h3>
+              <p class="impact-card-text">
+                Concrete congestion in Metro Manila and Central Luzon creates suffocating heat pockets. In agricultural belts, prolonged El Niño droughts dry irrigation canals and plunge farming families into debt.
+              </p>
+              <a href="story.html#heat" class="impact-card-link">
+                Explore temperature spikes
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- [ELEMENT: LINE] Inverted Wave Divider Transition to Ocean Section -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C300,100 600,10 900,90 L1200,30 L1200,120 L0,120 Z" class="wave-fill-ocean"></path>
+      </svg>
+    </div>
+
+    <!-- ========================================================================
+         [NARRATIVE: COLLECTIVE IDENTITY] "Why It Matters To Us" Section
+         - Inclusive language: "We", "Our", "Together"
+         - Organic blob shape backdrop contrasting geometric typography
+         ======================================================================== -->
+    <section class="section section-ocean collective-section" aria-labelledby="collective-title">
+      <!-- [ELEMENT: FORM/SHAPE] Organic animated backdrop blob -->
+      <div class="blob-shape-bg" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="collective-grid">
+          <div class="reveal">
+            <span style="display: inline-block; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #ffd299; margin-bottom: 0.5rem;">The Spirit of Bayanihan</span>
+            <h2 id="collective-title" style="margin-bottom: var(--space-md); color: #FFFFFF;">
+              Why This Is Our Shared Fight
+            </h2>
+            <p style="margin-bottom: 1.2rem;">
+              In the Philippines, resilience is often romanticized—praised in photographs of children smiling through waist-deep waters. But true resilience isn't passive acceptance; it is <strong>Bayanihan</strong>: the ancient Filipino custom of lifting an entire house together upon communal shoulders.
+            </p>
+            <p style="margin-bottom: 1.8rem;">
+              When one barangay is washed away, our shared food supplies dwindle. When typhoon seasons stretch longer, our school calendars rupture. We refuse to let climate loss become our normal. Through collective digital storytelling, policy advocacy, and community action, we transform shared vulnerability into unified power.
+            </p>
+
+            <div class="quote-bubble" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); color: #FFFFFF;">
+              "Ang bagyo ay lumilipas, ngunit ang ating paninindigan para sa kalikasan at kinabukasan ay hindi kailanman matitinag."
+              <span class="quote-author" style="color: #ffd299;">— Tindig Youth Collective Statement, Metro Manila</span>
+            </div>
+          </div>
+
+          <div class="collective-img-frame reveal">
+            <img src="./assets/images/activism.jpg" alt="Young Filipino university students and environmental advocates holding placards for climate justice" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [ELEMENT: LINE] Smooth wave transition to Sand background -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C200,80 500,20 800,85 L1200,10 L1200,120 L0,120 Z" class="wave-fill-sand"></path>
+      </svg>
+    </div>
+
+    <!-- ========================================================================
+         [PRINCIPLE: EMPHASIS] Community Call-to-Action & Pledge Strip
+         ======================================================================== -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-2xl) var(--space-lg); box-shadow: var(--shadow-md); text-align: center; max-width: 900px; margin: 0 auto;" class="reveal">
+          <div class="heading-accent center">
+            <h2 id="cta-title">Stand With Us Today</h2>
+          </div>
+          <p style="margin: 0 auto var(--space-lg); font-size: 1.15rem;">
+            Commit to our interactive 6-point youth climate pledge, share your community's story, or explore practical local actions from mangrove restoration to single-use plastic reduction.
+          </p>
+          <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+            <a href="take-action.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.85rem 1.8rem;">
+              Take The Youth Climate Pledge
+            </a>
+            <a href="gallery.html" class="btn btn-secondary" style="font-size: 1.05rem; padding: 0.85rem 1.8rem;">
+              View Voices & Visuals
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Global Footer
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TINDIG PILIPINAS</h3>
+          <p>
+            An advocacy web project demonstrating the visible integration of the Elements of Art and Principles of Design for Digital Interface Design. Dedicated to the youth and frontline communities of the Philippine archipelago.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Explore Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="story.html">The Impact Timeline</a></li>
+            <li><a href="gallery.html">Voices & Visuals Gallery</a></li>
+            <li><a href="take-action.html">My Climate Pledge</a></li>
+            <li><a href="about.html">Design Rationale & Team</a></li>
+            <li><a href="contact.html">Contact & NGO Partners</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Context</h4>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+            College of Fine Arts & Design / Computer Studies<br>
+            Course: Digital Interface Design (DID301)<br>
+            Grading Criteria: Art Elements, Design Principles, Narrative, Accessibility (WCAG AA).
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TINDIG Climate Action Collective. Built for academic presentation and public awareness.</div>
+        <div>No commercial affiliation · Open Educational Resource</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

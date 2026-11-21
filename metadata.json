@@ -1,0 +1,8 @@
+{
+  "name": "TINDIG - Philippines Climate Action",
+  "description": "An advocacy and digital storytelling platform addressing climate change impacts in the Philippines through the elements of art and principles of design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

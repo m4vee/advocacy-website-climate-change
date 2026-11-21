@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Partner Resources — TINDIG Philippines</title>
+  <meta name="description" content="Connect with the student advocacy team behind TINDIG and discover leading Philippine climate organizations and emergency resources.">
+
+  <!-- [PRINCIPLE: HARMONY] Typography Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Tindig Homepage">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v8"></path>
+          <path d="m4.93 10.93 1.41 1.41"></path>
+          <path d="M2 18h2"></path>
+          <path d="M20 18h2"></path>
+          <path d="m19.07 10.93-1.41 1.41"></path>
+          <path d="M22 22H2"></path>
+          <path d="m8 22 4-10 4 10"></path>
+        </svg>
+        <span>TINDIG</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="story.html" class="nav-link">The Impact</a>
+        <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+        <a href="take-action.html" class="nav-link">Take Action</a>
+        <a href="about.html" class="nav-link">Our Group</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle dark/light mode">
+          <svg id="themeIcon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="take-action.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">Pledge Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobileDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="story.html" class="nav-link">The Impact</a>
+    <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+    <a href="take-action.html" class="nav-link">Take Action</a>
+    <a href="about.html" class="nav-link">Our Group</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+
+  <main>
+    <section class="section" style="padding-bottom: var(--space-md); position: relative; overflow: hidden;" aria-labelledby="contact-heading">
+      <div class="floating-accent-element" style="top: 15px; left: 6%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(232, 106, 23, 0.18) 0%, transparent 70%); border-radius: 50%;"></div>
+
+      <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto; position: relative; z-index: 2;">
+        <span class="reveal-scale" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-sunset); display: block; margin-bottom: 0.5rem;">
+          Open Dialogue & Solidarities
+        </span>
+        <div class="heading-accent center">
+          <h1 id="contact-heading" class="reveal">Connect With Our Team</h1>
+        </div>
+        <p class="reveal" style="margin: 0 auto; line-height: 1.75;">
+          Whether you are a fellow university student interested in organizing a campus climate exhibition, a researcher sharing local data, or an NGO partner, we welcome your collaboration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & Partners Grid -->
+    <section class="section" style="padding-top: 0;" aria-label="Contact form and resources">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl);">
+          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl);">
+            
+            <!-- Accessible Contact Form -->
+            <div class="form-card reveal-left">
+              <div class="heading-accent">
+                <h2>Send Us a Message</h2>
+              </div>
+              <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+                All fields are validated for accessibility. You will receive an immediate confirmation.
+              </p>
+
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Full Name</label>
+                  <input type="text" id="contactName" class="form-input" placeholder="e.g. Maria Katigbak" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Email Address</label>
+                  <input type="email" id="contactEmail" class="form-input" placeholder="e.g. maria@university.edu.ph" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                  <label for="contactInquiryType" class="form-label">Purpose of Inquiry</label>
+                  <select id="contactInquiryType" class="form-select" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="campus-exhibition">Campus Exhibition / Academic Discussion</option>
+                    <option value="volunteer-partnership">Student Volunteering & Tree Planting</option>
+                    <option value="data-submission">Share Localized Climate Research / Data</option>
+                    <option value="press-media">Press / Student Media Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">Your Message</label>
+                  <textarea id="contactMessage" class="form-textarea" rows="5" placeholder="Share your suggestions, project feedback, or collaboration ideas..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  Send Message to Tindig Team
+                </button>
+
+                <div id="contactFeedback" class="form-feedback" role="status"></div>
+              </form>
+            </div>
+
+            <!-- Partner NGOs and Coalition Resources -->
+            <div class="reveal-right">
+              <div class="heading-accent">
+                <h2>Philippine Climate Allies & Resources</h2>
+              </div>
+              <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+                TINDIG stands in solidarity with frontline civil society organizations defending our environment and communities:
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- NGO 1 -->
+                <div class="stat-card">
+                  <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Youth Advocates for Climate Action Philippines (YACAP)</h3>
+                  <p style="font-size: 0.88rem; color: var(--color-charcoal-muted); margin-bottom: 0.5rem;">
+                    The Philippine chapter of Fridays for Future, uniting youth activists and indigenous defenders across Luzon, Visayas, and Mindanao.
+                  </p>
+                  <span style="font-size: 0.8rem; color: var(--color-ocean); font-weight: 600;">Focus: Youth Strikes, Climate Education & Policy Advocacy</span>
+                </div>
+
+                <!-- NGO 2 -->
+                <div class="stat-card">
+                  <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Greenpeace Philippines</h3>
+                  <p style="font-size: 0.88rem; color: var(--color-charcoal-muted); margin-bottom: 0.5rem;">
+                    Leading investigations on climate accountability, plastic pollution reduction, and renewable energy adoption in Southeast Asia.
+                  </p>
+                  <span style="font-size: 0.8rem; color: var(--color-ocean); font-weight: 600;">Focus: Carbon Majors Inquiry, Ocean Sanctuaries & Fossil Fuel Phaseout</span>
+                </div>
+
+                <!-- NGO 3 -->
+                <div class="stat-card">
+                  <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Kalikasan People's Network for the Environment</h3>
+                  <p style="font-size: 0.88rem; color: var(--color-charcoal-muted); margin-bottom: 0.5rem;">
+                    Grassroots network advocating for the defense of ancestral lands, environmental defenders, and sustainable ecological stewardship.
+                  </p>
+                  <span style="font-size: 0.8rem; color: var(--color-ocean); font-weight: 600;">Focus: Land Rights, Anti-Reclamation & Community Resilience</span>
+                </div>
+
+                <!-- NGO 4 -->
+                <div class="stat-card">
+                  <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Center for Energy, Ecology, and Development (CEED)</h3>
+                  <p style="font-size: 0.88rem; color: var(--color-charcoal-muted); margin-bottom: 0.5rem;">
+                    Think-do tank generating rigorous energy research to advance a just energy transition away from dirty coal and imported LNG.
+                  </p>
+                  <span style="font-size: 0.8rem; color: var(--color-ocean); font-weight: 600;">Focus: Clean Energy Research & Verde Island Passage Protection</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========================================================================
+             [NEW ENHANCED COMPONENT: PROPORTION & ACCESSIBILITY]
+             Interactive Climate Action FAQ Accordion
+             ======================================================================== -->
+        <div style="margin-top: var(--space-3xl);" class="reveal-scale">
+          <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+            <div class="heading-accent center">
+              <h2>Frequently Asked Questions</h2>
+            </div>
+            <p style="font-size: 0.95rem; margin: 0 auto;">
+              Common inquiries about our academic advocacy platform, data sources, and youth organizing:
+            </p>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item">
+              <button class="faq-header" type="button" aria-expanded="false">
+                <span>How can our student council or school organization use TINDIG?</span>
+                <span class="faq-icon">&#9660;</span>
+              </button>
+              <div class="faq-body">
+                TINDIG is an open educational and advocacy resource. Student organizations are free to project the platform during environmental summits, share the *My Climate Pledge* tracker in campus orientations, or use our documentary photos for non-commercial climate literacy campaigns.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-header" type="button" aria-expanded="false">
+                <span>Where does TINDIG obtain its climate statistics?</span>
+                <span class="faq-icon">&#9660;</span>
+              </button>
+              <div class="faq-body">
+                All data points are sourced directly from peer-reviewed institutional publications, including the Philippine Atmospheric, Geophysical and Astronomical Services Administration (PAGASA), the IPCC Sixth Assessment Report (AR6), and the Philippine Climate Change Commission.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-header" type="button" aria-expanded="false">
+                <span>How can youth organize a community mangrove planting drive?</span>
+                <span class="faq-icon">&#9660;</span>
+              </button>
+              <div class="faq-body">
+                Always partner with the local Department of Environment and Natural Resources (DENR) or community-based marine sanctuaries. Planting the wrong species (e.g., planting terrestrial trees in saline tidal zones) can disrupt ecosystems; indigenous *Bakawan* (Rhizophora) propagules must be planted in suitable muddy intertidal flats.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-header" type="button" aria-expanded="false">
+                <span>Is TINDIG affiliated with any political candidate or commercial brand?</span>
+                <span class="faq-icon">&#9660;</span>
+              </button>
+              <div class="faq-body">
+                No. TINDIG was built strictly as an independent college capstone project for *Digital Interface Design (DID301)*. It contains zero advertising, sponsors, or political endorsements.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Directory Box -->
+        <div class="emergency-directory reveal-scale">
+          <h3 style="font-size: 1.15rem; color: var(--color-sunset); margin-bottom: 0.4rem;">
+            Philippine Disaster Response & Climate Emergency Contacts
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--color-charcoal-muted); margin-bottom: 0.8rem;">
+            In case of severe typhoons, storm surges, or urban flash floods, contact emergency hotlines immediately:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; font-size: 0.85rem; font-family: var(--font-mono);">
+            <div><strong>NDRRMC:</strong> (02) 8911-5061 to 65</div>
+            <div><strong>PAGASA Weather:</strong> (02) 8284-0800</div>
+            <div><strong>Philippine Red Cross:</strong> 143 / (02) 8790-2300</div>
+            <div><strong>Bureau of Fire Protection:</strong> 911</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TINDIG PILIPINAS</h3>
+          <p>
+            An advocacy web project demonstrating the visible integration of the Elements of Art and Principles of Design for Digital Interface Design. Dedicated to the youth and frontline communities of the Philippine archipelago.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">The Impact Timeline</a></li>
+            <li><a href="gallery.html">Voices & Visuals</a></li>
+            <li><a href="take-action.html">Take Action</a></li>
+            <li><a href="about.html">About & Design Matrix</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Context</h4>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+            Digital Interface Design (DID301)<br>
+            Validated Contact Architecture<br>
+            Civil Society Partner Directory.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TINDIG Climate Action Collective.</div>
+        <div>Collective Agency for Climate Justice</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

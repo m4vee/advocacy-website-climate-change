@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Action & Climate Pledge — TINDIG Philippines</title>
+  <meta name="description" content="Commit to our interactive youth climate pledge, calculate your carbon reduction, and share your community climate experience.">
+
+  <!-- [PRINCIPLE: HARMONY] Typography Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Tindig Homepage">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v8"></path>
+          <path d="m4.93 10.93 1.41 1.41"></path>
+          <path d="M2 18h2"></path>
+          <path d="M20 18h2"></path>
+          <path d="m19.07 10.93-1.41 1.41"></path>
+          <path d="M22 22H2"></path>
+          <path d="m8 22 4-10 4 10"></path>
+        </svg>
+        <span>TINDIG</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="story.html" class="nav-link">The Impact</a>
+        <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+        <a href="take-action.html" class="nav-link active">Take Action</a>
+        <a href="about.html" class="nav-link">Our Group</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle dark/light mode">
+          <svg id="themeIcon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="#pledge-section" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">My Pledge</a>
+
+        <button class="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobileDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="story.html" class="nav-link">The Impact</a>
+    <a href="gallery.html" class="nav-link">Voices & Visuals</a>
+    <a href="take-action.html" class="nav-link active">Take Action</a>
+    <a href="about.html" class="nav-link">Our Group</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Hero / Intro -->
+    <section class="section" style="padding-bottom: var(--space-lg); position: relative; overflow: hidden;" aria-labelledby="action-page-title">
+      <!-- Floating Accent Shape -->
+      <div class="floating-accent-element" style="top: 20px; right: 10%; width: 280px; height: 280px; background: radial-gradient(circle, rgba(232, 106, 23, 0.22) 0%, transparent 70%); border-radius: 50%;"></div>
+
+      <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto; position: relative; z-index: 2;">
+        <span class="reveal-scale" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-forest); display: block; margin-bottom: 0.5rem;">
+          Collective Agency · Daily Advocacy
+        </span>
+        <div class="heading-accent center">
+          <h1 id="action-page-title" class="reveal">Our Hands. Our Islands. Our Future.</h1>
+        </div>
+        <p class="reveal" style="margin: 0 auto; line-height: 1.75;">
+          Climate anxiety is real, but action is the ultimate antidote. Here is how Filipino students and families can transform concern into measurable, collective impact—starting with your personal pledge.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         [NEW ENHANCED COMPONENT: BALANCE & PROPORTION]
+         Interactive Personal Action & Bayanihan Impact Calculator
+         ======================================================================== -->
+    <section class="container" style="margin-bottom: var(--space-2xl);" aria-labelledby="calc-heading">
+      <div class="action-calculator reveal-scale">
+        <div class="calculator-grid">
+          <div>
+            <div class="heading-accent">
+              <h2 id="calc-heading" style="font-size: 1.6rem; margin-bottom: 0.4rem;">Student Action Impact Estimator</h2>
+            </div>
+            <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+              Adjust the sliders below to see the collective carbon, plastic, and coastal wave protection impact of your daily lifestyle adjustments:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <label for="calcTransitDays">Weekly Public Transit / Train / Jeepney Commute</label>
+                  <span id="calcTransitVal" style="color: var(--color-sunset); font-family: var(--font-mono);">3 days/week</span>
+                </div>
+                <input type="range" id="calcTransitDays" min="0" max="7" value="3" style="width: 100%; accent-color: var(--color-sunset);">
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <label for="calcPlasticAvoided">Reusable Water Tumblers Used Daily</label>
+                  <span id="calcPlasticVal" style="color: var(--color-forest); font-family: var(--font-mono);">2 bottles/day</span>
+                </div>
+                <input type="range" id="calcPlasticAvoided" min="0" max="6" value="2" style="width: 100%; accent-color: var(--color-forest);">
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem;">
+                  <label for="calcTreePropagules">Mangrove Seedlings Supported or Planted</label>
+                  <span id="calcMangroveVal" style="color: var(--color-ocean); font-family: var(--font-mono);">5 seedlings/year</span>
+                </div>
+                <input type="range" id="calcTreePropagules" min="0" max="25" value="5" style="width: 100%; accent-color: var(--color-ocean);">
+              </div>
+            </div>
+          </div>
+
+          <!-- Output Scoreboard -->
+          <div class="calc-result-box">
+            <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #ffd299; font-weight: 700;">
+              Your Estimated Annual Contribution
+            </span>
+            <div id="calcCo2Total" class="calc-result-number">41.3 kg</div>
+            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
+              CO₂ emissions prevented annually
+            </div>
+
+            <div style="padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.2); display: flex; justify-content: space-around; font-size: 0.85rem;">
+              <div>
+                <strong id="calcPlasticTotal" style="color: #ffd299; display: block; font-size: 1.1rem;">60 units</strong>
+                <span>Plastics Diverted</span>
+              </div>
+              <div>
+                <strong id="calcMangroveTotal" style="color: #86efac; display: block; font-size: 1.1rem;">+7.5%</strong>
+                <span>Wave Damping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         [INTERACTIVE FEATURE] "My Climate Pledge" Checklist with SVG Progress Ring
+         - Elements applied: Form/Shape (circular geometry), Color (Forest Green)
+         - State saved to localStorage
+         ======================================================================== -->
+    <section class="container" id="pledge-section" aria-labelledby="pledge-heading">
+      <div class="pledge-card reveal-scale">
+        <div class="pledge-header">
+          <div>
+            <div class="heading-accent">
+              <h2 id="pledge-heading" style="margin-bottom: 0.35rem;">My Filipino Youth Climate Pledge</h2>
+            </div>
+            <p style="margin: 0;">
+              Check the tangible steps you commit to practicing. Your progress is saved locally in your browser.
+            </p>
+          </div>
+
+          <!-- Circular SVG Progress Ring -->
+          <div class="progress-ring-container" aria-label="Pledge completion progress">
+            <svg width="105" height="105" viewBox="0 0 100 100">
+              <circle class="progress-ring-circle progress-ring-bg" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"></circle>
+              <circle id="pledgeCircle" class="progress-ring-circle progress-ring-bar" stroke-width="8" stroke-linecap="round" fill="transparent" r="45" cx="50" cy="50"></circle>
+            </svg>
+            <div>
+              <div id="pledgePercentText" class="progress-label-text" style="font-size: 1.6rem; line-height: 1;">0%</div>
+              <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-charcoal-muted); font-weight: 600;">Completed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Interactive Checklists -->
+        <ul class="pledge-list" role="list">
+          <li class="pledge-item reveal-left">
+            <input type="checkbox" id="pledge1" class="pledge-checkbox" aria-describedby="pledge1-desc">
+            <label for="pledge1" class="pledge-text-wrap">
+              <strong>1. Eliminate Single-Use Plastics</strong>
+              <span id="pledge1-desc">Carry a reusable tumbler, cutlery, and eco-bag to campus to stop sachet pollution choking Manila waterways.</span>
+            </label>
+          </li>
+
+          <li class="pledge-item reveal-right">
+            <input type="checkbox" id="pledge2" class="pledge-checkbox" aria-describedby="pledge2-desc">
+            <label for="pledge2" class="pledge-text-wrap">
+              <strong>2. Adopt Low-Carbon Mobility</strong>
+              <span id="pledge2-desc">Walk, bicycle, or utilize public jeepneys and rail transit instead of private ride-hailing when safe to do so.</span>
+            </label>
+          </li>
+
+          <li class="pledge-item reveal-left">
+            <input type="checkbox" id="pledge3" class="pledge-checkbox" aria-describedby="pledge3-desc">
+            <label for="pledge3" class="pledge-text-wrap">
+              <strong>3. Conserve Household Energy</strong>
+              <span id="pledge3-desc">Turn off idling air-conditioning and electronics during peak midday hours to reduce grid strain and coal dependence.</span>
+            </label>
+          </li>
+
+          <li class="pledge-item reveal-right">
+            <input type="checkbox" id="pledge4" class="pledge-checkbox" aria-describedby="pledge4-desc">
+            <label for="pledge4" class="pledge-text-wrap">
+              <strong>4. Join Coastal / Mangrove Cleanups</strong>
+              <span id="pledge4-desc">Volunteer at least twice a year in local estuarine tree-planting or barangay drainage clearing drives.</span>
+            </label>
+          </li>
+
+          <li class="pledge-item reveal-left">
+            <input type="checkbox" id="pledge5" class="pledge-checkbox" aria-describedby="pledge5-desc">
+            <label for="pledge5" class="pledge-text-wrap">
+              <strong>5. Hold Leaders Accountable</strong>
+              <span id="pledge5-desc">Vote for local officials who prioritize environmental masterplans over short-sighted reclamation and tree cutting.</span>
+            </label>
+          </li>
+
+          <li class="pledge-item reveal-right">
+            <input type="checkbox" id="pledge6" class="pledge-checkbox" aria-describedby="pledge6-desc">
+            <label for="pledge6" class="pledge-text-wrap">
+              <strong>6. Amplify Climate Storytelling</strong>
+              <span id="pledge6-desc">Share authentic documentary media with classmates, family, and online networks to debunk climate disinformation.</span>
+            </label>
+          </li>
+        </ul>
+
+        <!-- Celebratory State -->
+        <div id="pledgeCelebration" style="display: none; margin-top: 1.5rem; padding: 1.25rem; background: rgba(46, 125, 91, 0.12); border: 1px solid var(--color-forest); border-radius: var(--radius-sm); text-align: center;">
+          <h3 style="color: var(--color-forest); font-size: 1.25rem; margin-bottom: 0.35rem;">Mabuhay! You completed 100% of the Youth Climate Pledge!</h3>
+          <p style="margin: 0 auto; font-size: 0.95rem;">You are standing firmly for our islands. Share your commitment with friends and inspire others to take the pledge.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Cards Grid -->
+    <section class="section" style="padding-top: 0;" aria-labelledby="action-pillars-heading">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto var(--space-xl);">
+          <div class="heading-accent center">
+            <h2 id="action-pillars-heading">Five Ways to Mobilize in Your Barangay</h2>
+          </div>
+          <p style="margin: 0 auto;">Tangible, community-oriented solutions that create immediate local resilience.</p>
+        </div>
+
+        <div class="cards-grid-3">
+          <div class="stat-card reveal-left">
+            <div style="font-size: 1.8rem; color: var(--color-forest); margin-bottom: 0.5rem;">🌱</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Mangrove & Urban Gardening</h3>
+            <p style="font-size: 0.9rem; color: var(--color-charcoal-muted);">
+              Support indigenous mangrove reforestation along estuaries to build natural seawalls that absorb storm energy and protect spawning fish.
+            </p>
+          </div>
+
+          <div class="stat-card reveal-scale">
+            <div style="font-size: 1.8rem; color: var(--color-sunset); margin-bottom: 0.5rem;">⚡</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Solar & Energy Independence</h3>
+            <p style="font-size: 0.9rem; color: var(--color-charcoal-muted);">
+              Advocate for rooftop solar installations in universities and community centers to build decentralized microgrids that survive typhoon blackouts.
+            </p>
+          </div>
+
+          <div class="stat-card reveal-right">
+            <div style="font-size: 1.8rem; color: var(--color-ocean); margin-bottom: 0.5rem;">🌊</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Solid Waste & Estuary Defense</h3>
+            <p style="font-size: 0.9rem; color: var(--color-charcoal-muted);">
+              Organize neighborhood zero-waste education and trash interception traps in esteros before plastic debris reaches Manila Bay.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Story Submission & Live Feed -->
+    <section class="section section-muted" aria-labelledby="community-voices-heading">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl);">
+          <!-- Form Column -->
+          <div class="form-card reveal-left">
+            <div class="heading-accent">
+              <h2 id="community-voices-heading">Share Your Community Experience</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+              Have you experienced typhoon surges, extreme urban heat, or joined a local environmental cleanup? Submit your voice to our collective archive.
+            </p>
+
+            <form id="storySubmissionForm">
+              <div class="form-group">
+                <label for="storyAuthorName" class="form-label">Your Name or Alias</label>
+                <input type="text" id="storyAuthorName" class="form-input" placeholder="e.g. Maria Santos / Youth Volunteer" required>
+              </div>
+
+              <div class="form-group">
+                <label for="storyAuthorLocation" class="form-label">Your Municipality / Province</label>
+                <input type="text" id="storyAuthorLocation" class="form-input" placeholder="e.g. Tacloban City / Malabon / Cebu" required>
+              </div>
+
+              <div class="form-group">
+                <label for="storyContent" class="form-label">Your Climate Reality or Message of Hope</label>
+                <textarea id="storyContent" class="form-textarea" rows="4" placeholder="Describe how climate affects your school, livelihood, or how your neighborhood practices Bayanihan..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Publish to Community Voice Board
+              </button>
+
+              <div id="storyFeedback" class="form-feedback" role="status"></div>
+            </form>
+          </div>
+
+          <!-- Live Feed Column -->
+          <div class="reveal-right">
+            <div class="heading-accent">
+              <h2>Voices From The Archipelago</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+              Recent messages submitted by students, coastal volunteers, and youth advocates across the Philippines.
+            </p>
+
+            <div id="communityStoriesFeed" style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="quote-bubble reveal">
+                "During Typhoon Carina, our street in Marikina turned into a river within hours. But before rescue boats even arrived, neighbors had already pulled bamboo rafts together to carry our elderly to the third floor of the chapel. That is Tindig."
+                <span class="quote-author">— Carlos M., Marikina River Basin</span>
+              </div>
+
+              <div class="quote-bubble reveal">
+                "Our school closed for two weeks because the classroom heat index hit 50°C. We can't study when our foreheads are burning. Climate justice is an educational right!"
+                <span class="quote-author">— Angelica R., Grade 11 Student, Bulacan</span>
+              </div>
+
+              <div class="quote-bubble reveal">
+                "Planting bakawan with my classmates opened my eyes. What takes hours to plant protects our coast for thirty years. We will keep planting every month."
+                <span class="quote-author">— Jayvee T., Palawan Marine Youth Volunteer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TINDIG PILIPINAS</h3>
+          <p>
+            An advocacy web project demonstrating the visible integration of the Elements of Art and Principles of Design for Digital Interface Design. Dedicated to the youth and frontline communities of the Philippine archipelago.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">The Impact Timeline</a></li>
+            <li><a href="gallery.html">Voices & Visuals</a></li>
+            <li><a href="take-action.html">Take Action</a></li>
+            <li><a href="about.html">About & Design Matrix</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Context</h4>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+            Digital Interface Design (DID301)<br>
+            Interactive pledge with localStorage persistence<br>
+            Real-time DOM story submission.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TINDIG Climate Action Collective.</div>
+        <div>Collective Agency for Climate Justice</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

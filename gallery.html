@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voices & Visuals — TINDIG Philippines</title>
+  <meta name="description" content="A curated digital gallery of documentary photography and youth art depicting climate reality and community hope across the Philippines.">
+
+  <!-- [PRINCIPLE: HARMONY] Typography Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Tindig Homepage">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v8"></path>
+          <path d="m4.93 10.93 1.41 1.41"></path>
+          <path d="M2 18h2"></path>
+          <path d="M20 18h2"></path>
+          <path d="m19.07 10.93-1.41 1.41"></path>
+          <path d="M22 22H2"></path>
+          <path d="m8 22 4-10 4 10"></path>
+        </svg>
+        <span>TINDIG</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="story.html" class="nav-link">The Impact</a>
+        <a href="gallery.html" class="nav-link active">Voices & Visuals</a>
+        <a href="take-action.html" class="nav-link">Take Action</a>
+        <a href="about.html" class="nav-link">Our Group</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle dark/light mode">
+          <svg id="themeIcon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="take-action.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">Pledge Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobileDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="story.html" class="nav-link">The Impact</a>
+    <a href="gallery.html" class="nav-link active">Voices & Visuals</a>
+    <a href="take-action.html" class="nav-link">Take Action</a>
+    <a href="about.html" class="nav-link">Our Group</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Gallery Intro -->
+    <section class="section" style="padding-bottom: var(--space-md); position: relative; overflow: hidden;" aria-labelledby="gallery-page-title">
+      <!-- Floating Accent Shape -->
+      <div class="floating-accent-element" style="top: 10px; left: 8%; width: 220px; height: 220px; background: radial-gradient(circle, rgba(46, 125, 91, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+
+      <div class="container" style="text-align: center; max-width: 860px; margin: 0 auto; position: relative; z-index: 2;">
+        <span class="reveal-scale" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-forest); display: block; margin-bottom: 0.5rem;">
+          Visual Journalism & Community Voices
+        </span>
+        <div class="heading-accent center">
+          <h1 id="gallery-page-title" class="reveal">Voices & Visuals of Climate Reality</h1>
+        </div>
+        <p class="reveal" style="margin: 0 auto var(--space-lg); line-height: 1.75;">
+          Art and documentary photography hold up a mirror to what statistics alone cannot convey: the lived dignity, sorrow, and fierce determination of Filipino communities on the climate frontline.
+        </p>
+
+        <!-- [NEW ENHANCED COMPONENT: TEXTURE & EMPHASIS] Environmental Dispatch Ribbon -->
+        <div class="soundscape-ribbon reveal-scale">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <span style="font-size: 0.92rem; font-weight: 600;">Dispatch Archive: Documenting grassroots reality across 17 Philippine regions</span>
+          </div>
+          <span style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.65rem; border-radius: var(--radius-sm); font-family: var(--font-mono);">
+            6 Curated Exhibits
+          </span>
+        </div>
+
+        <!-- [PRINCIPLE: EMPHASIS] Interactive Filter Bar -->
+        <div class="filter-bar reveal" role="toolbar" aria-label="Gallery category filters">
+          <button class="filter-btn active" data-filter="all">All Stories (6)</button>
+          <button class="filter-btn" data-filter="typhoons">Typhoons (2)</button>
+          <button class="filter-btn" data-filter="floods">Floods & Seas (1)</button>
+          <button class="filter-btn" data-filter="heat">Urban Heat (1)</button>
+          <button class="filter-btn" data-filter="hope">Hope & Action (2)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         [ELEMENT: FORM / SHAPE & TEXTURE] Gallery Grid with Directional Reveals
+         ======================================================================== -->
+    <section class="section" style="padding-top: 0;" aria-label="Photo and artwork collection">
+      <div class="container">
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- Item 1: Hope / Youth Activism -->
+          <div class="gallery-item reveal-left" 
+               tabindex="0" 
+               role="button" 
+               aria-label="View details for Tindig Para sa Kalikasan" 
+               data-category="hope" 
+               data-story="University students in Quezon City demonstrate during the Global Climate Strike, holding cardboard banners with slogans calling for an end to fossil fuel dependence and immediate climate justice for frontline islands.">
+            <div class="gallery-media">
+              <img src="./assets/images/activism.jpg" alt="University students holding hand-crafted placards advocating climate justice" class="gallery-img" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-category-tag">Hope & Youth Activism</span>
+                <h3 class="gallery-item-title">Tindig Para Sa Kalikasan</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Floods / Rising Seas -->
+          <div class="gallery-item reveal-scale" 
+               tabindex="0" 
+               role="button" 
+               aria-label="View details for The Vanishing Shoreline" 
+               data-category="floods" 
+               data-story="A traditional fishing settlement along the eastern seaboard where rising sea levels gradually swallow the sandy beach. Coastal families reinforce wooden stilts while daily tides encroach higher into community living areas.">
+            <div class="gallery-media">
+              <img src="./assets/images/hero.jpg" alt="Coastal stilt homes and wooden outrigger boats along shoreline" class="gallery-img" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-category-tag">Floods & Rising Seas</span>
+                <h3 class="gallery-item-title">The Vanishing Shoreline</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Typhoons -->
+          <div class="gallery-item reveal-right" 
+               tabindex="0" 
+               role="button" 
+               aria-label="View details for Bayanihan in the Mud" 
+               data-category="typhoons" 
+               data-story="In the hours following a catastrophic Category-5 typhoon landfall in Samar, neighbors immediately mobilize to clear heavy fallen timber and restore foot access so food and potable water can reach trapped elderly residents.">
+            <div class="gallery-media">
+              <img src="./assets/images/typhoon.jpg" alt="Neighbors clearing storm debris together along a coastal pathway" class="gallery-img" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-category-tag">Typhoons</span>
+                <h3 class="gallery-item-title">Bayanihan in the Mud</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Hope / Mangrove Restoration -->
+          <div class="gallery-item reveal-left" 
+               tabindex="0" 
+               role="button" 
+               aria-label="View details for Roots of Resilience" 
+               data-category="hope" 
+               data-story="Student volunteers and local women's associations knee-deep in tidal mud flats planting Bakawan (Rhizophora) propagules. A single healthy hectare of mature mangroves absorbs up to four times more carbon than terrestrial rainforests.">
+            <div class="gallery-media">
+              <img src="./assets/images/mangrove.jpg" alt="Volunteers smiling as they plant mangrove seedlings in mudflats" class="gallery-img" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-category-tag">Hope & Ecosystems</span>
+                <h3 class="gallery-item-title">Roots of Resilience</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Urban Heat -->
+          <div class="gallery-item reveal-scale" 
+               tabindex="0" 
+               role="button" 
+               aria-label="View details for Manila's Asphalt Furnace" 
+               data-category="heat" 
+               data-story="Commuters and street vendors under the sweltering 48°C heat index along Taft Avenue. With limited shade trees and asphalt radiating thermal energy, urban transport workers face acute heat stress and exhaustion.">
+            <div class="gallery-media">
+              <img src="./assets/images/heat.jpg" alt="Manila commuters with sun umbrellas walking beside a yellow jeepney in intense summer heat" class="gallery-img" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-category-tag">Urban Heat</span>
+                <h3 class="gallery-item-title">Manila's Asphalt Furnace</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Typhoons / Recovery -->
+          <div class="gallery-item reveal-right" 
+               tabindex="0" 
+               role="button" 
+               aria-label="View details for Classrooms That Rise" 
+               data-category="typhoons" 
+               data-story="Community carpenters and youth volunteers raising new galvanized iron sheets over a typhoon-damaged public elementary school in Leyte, ensuring children do not lose another school term to climate disruption.">
+            <div class="gallery-media">
+              <img src="./assets/images/typhoon.jpg" alt="Filipino community working together in typhoon recovery" class="gallery-img" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-category-tag">Typhoons</span>
+                <h3 class="gallery-item-title">Classrooms That Rise</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- [NEW ENHANCED COMPONENT: BALANCE & HARMONY] Curator's Note -->
+        <div class="curator-note-card reveal-scale">
+          <div class="curator-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem;">Curatorial Thesis: Visual Literacy in Climate Justice</h3>
+            <p style="font-size: 0.95rem; color: var(--color-charcoal-muted); line-height: 1.65; margin: 0;">
+              Every photograph featured in this collection is curated to honor the dignity of our subjects. We reject the "poverty porn" visual trope that strips communities of agency. Instead, our compositions place human figures at the center of action—hauling timber, planting roots, and raising banners—embodying solidarity over victimization.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <div class="lightbox-content">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <button id="lightboxPrev" class="lightbox-nav-btn lightbox-prev" aria-label="Previous item">&#10094;</button>
+        <button id="lightboxNext" class="lightbox-nav-btn lightbox-next" aria-label="Next item">&#10095;</button>
+
+        <div class="lightbox-img-wrapper">
+          <img id="lightboxImg" src="" alt="Enlarged view">
+        </div>
+
+        <div class="lightbox-info">
+          <div id="lightboxCategory" style="font-size: 0.75rem; font-weight: 700; color: var(--color-sunset); letter-spacing: 0.1em; margin-bottom: 0.25rem;"></div>
+          <h2 id="lightboxTitle" class="lightbox-title"></h2>
+          <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TINDIG PILIPINAS</h3>
+          <p>
+            An advocacy web project demonstrating the visible integration of the Elements of Art and Principles of Design for Digital Interface Design. Dedicated to the youth and frontline communities of the Philippine archipelago.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">The Impact Timeline</a></li>
+            <li><a href="gallery.html">Voices & Visuals</a></li>
+            <li><a href="take-action.html">Take Action</a></li>
+            <li><a href="about.html">About & Design Matrix</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Context</h4>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+            Digital Interface Design (DID301)<br>
+            Keyboard accessible lightbox (Esc, Left/Right arrow)<br>
+            Responsive filter architecture.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TINDIG Climate Action Collective.</div>
+        <div>Visual Storytelling for Climate Justice</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
