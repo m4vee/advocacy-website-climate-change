@@ -100,8 +100,8 @@
       </div>
 
       <div class="values-grid">
-        <div class="value-card reveal-left">
-          <div class="value-icon" aria-hidden="true">
+        <div class="value-card reveal-left" style="text-align: center;">
+          <div class="value-icon" aria-hidden="true" style="margin: 0 auto 1rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
@@ -112,8 +112,8 @@
           </p>
         </div>
 
-        <div class="value-card reveal-scale">
-          <div class="value-icon" style="color: var(--color-forest); background: rgba(46, 125, 91, 0.1);" aria-hidden="true">
+        <div class="value-card reveal-scale" style="text-align: center;">
+          <div class="value-icon" style="color: var(--color-forest); background: rgba(46, 125, 91, 0.1); margin: 0 auto 1rem;" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
               <circle cx="9" cy="7" r="4"></circle>
@@ -127,8 +127,8 @@
           </p>
         </div>
 
-        <div class="value-card reveal-right">
-          <div class="value-icon" style="color: var(--color-sunset); background: rgba(232, 106, 23, 0.1);" aria-hidden="true">
+        <div class="value-card reveal-right" style="text-align: center;">
+          <div class="value-icon" style="color: var(--color-sunset); background: rgba(232, 106, 23, 0.1); margin: 0 auto 1rem;" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="16" x2="12" y2="12"></line>
@@ -150,67 +150,79 @@
           <div class="heading-accent center">
             <h2 id="team-heading" class="reveal">Meet The Student Collective</h2>
           </div>
-          <p class="reveal" style="margin: 0 auto;">Five dedicated student roles collaborating across research, visual craft, front-end code, and oral defense.</p>
+            <p class="reveal" style="margin: 0 auto;">
+              Five team members working together to create an engaging climate change advocacy website through research, design, development, and collaboration.
+            </p>        
         </div>
 
-        <div class="team-grid">
-          <!-- Member 1: Lead Designer -->
-          <article class="team-card reveal-left">
-            <div class="team-avatar" aria-label="Avatar for Juan Dela Cruz">JD</div>
-            <h3 class="team-name">Paul Angelo Dalipe</h3>
-            <div class="team-role">Lead Developer</div>
-            <p class="team-desc">
-              Crafted the typography hierarchy, wave SVG linework, color palette system, and visual balance.
-            </p>
-          </article>
+<div class="team-grid">
+  <!-- Member 1: Lead Developer -->
+  <article class="team-card reveal-left">
+    <div class="team-avatar">
+      <img src="public/assets/images/paul.jpg" alt="Paul Angelo Dalipe">
+    </div>
+    <h3 class="team-name">Paul Angelo Dalipe</h3>
+    <div class="team-role">Lead Developer</div>
+    <p class="team-desc">
+      Engineered the website's structure, interactive features, and overall technical implementation.
+    </p>
+  </article>
 
-          <!-- Member 2: Researcher -->
-          <article class="team-card reveal-scale">
-            <div class="team-avatar" style="background: linear-gradient(135deg, var(--color-forest), #16537e);" aria-label="Avatar for Maria Clara Santos">MS</div>
-            <h3 class="team-name">Brian Dapito</h3>
-            <div class="team-role">Researcher</div>
-            <p class="team-desc">
-              Curated climatic data from PAGASA, IPCC AR6, and localized community impact case studies.
-            </p>
-          </article>
+  <!-- Member 2: Researcher -->
+  <article class="team-card reveal-scale">
+    <div class="team-avatar">
+      <img src="public/assets/images/brian.jpg" alt="Brian Dapito">
+    </div>
+    <h3 class="team-name">Brian Dapito</h3>
+    <div class="team-role">Researcher</div>
+    <p class="team-desc">
+       Gathered and organized information on climate change, environmental issues, and their effects on local communities.
+    </p>
+  </article>
 
-          <!-- Member 3: Content Writer -->
-          <article class="team-card reveal-scale">
-            <div class="team-avatar" style="background: linear-gradient(135deg, var(--color-sunset), #c2410c);" aria-label="Avatar for Carlos Joaquin">CJ</div>
-            <h3 class="team-name">Mave Rick Sandoval</h3>
-            <div class="team-role">Frontend Developer</div>
-            <p class="team-desc">
-              Authored the collective narrative, Bayanihan rhetoric, and community voice storytelling.
-            </p>
-          </article>
+  <!-- Member 3: Frontend Developer -->
+  <article class="team-card reveal-scale">
+    <div class="team-avatar">
+      <img src="public/assets/images/mave.jpg" alt="Mave Rick Sandoval">
+    </div>
+    <h3 class="team-name">Mave Rick Sandoval</h3>
+    <div class="team-role">Frontend Developer</div>
+    <p class="team-desc">
+      Developed the website's visual interface, layout, and responsive design for a smooth user experience.
+    </p>
+  </article>
 
-          <!-- Member 4: Developer -->
-          <article class="team-card reveal-scale">
-            <div class="team-avatar" style="background: linear-gradient(135deg, var(--color-ocean), #0284c7);" aria-label="Avatar for Bea Alcantara">BA</div>
-            <h3 class="team-name">Krislyn Sayat</h3>
-            <div class="team-role">Researcher</div>
-            <p class="team-desc">
-              Engineered semantic HTML5, responsive CSS3, vanilla JS pledge tracker, and WCAG AA accessibility.
-            </p>
-          </article>
+  <!-- Member 4: Researcher -->
+  <article class="team-card reveal-scale">
+    <div class="team-avatar">
+      <img src="public/assets/images/krislyn.jpg" alt="Krislyn Sayat">
+    </div>
+    <h3 class="team-name">Krislyn Sayat</h3>
+    <div class="team-role">Researcher</div>
+    <p class="team-desc">
+      Conducted research and gathered information to support the website's climate advocacy content.
+    </p>
+  </article>
 
-          <!-- Member 5: Presenter -->
-          <article class="team-card reveal-right">
-            <div class="team-avatar" style="background: linear-gradient(135deg, #0d9488, var(--color-ocean));" aria-label="Avatar for Dominic Reyes">DR</div>
-            <h3 class="team-name">John Carlo Trajico</h3>
-            <div class="team-role">Frontend Developer</div>
-            <p class="team-desc">
-              Coordinated group slide structure, live interactive walkthrough, and Q&A defense readiness.
-            </p>
-          </article>
-        </div>
+  <!-- Member 5: Frontend Developer -->
+  <article class="team-card reveal-right">
+    <div class="team-avatar">
+      <img src="public/assets/images/carlo.jpg" alt="John Carlo Trajico">
+    </div>
+    <h3 class="team-name">John Carlo Trajico</h3>
+    <div class="team-role">Frontend Developer</div>
+    <p class="team-desc">
+      Implemented the website's interactive elements, responsive components, and user interface functionality.
+    </p>
+  </article>
+</div>
       </div>
     </section>
 
     <!-- ========================================================================
          [NEW ENHANCED COMPONENT: COLOR, TEXTURE, PROPORTION]
          Interactive Design Tokens Swatch Board
-         ======================================================================== -->
+         ======================================================================== 
     <section class="container" style="margin-bottom: var(--space-2xl);" aria-labelledby="tokens-heading">
       <div class="design-tokens-board reveal-scale">
         <div class="heading-accent">
@@ -220,7 +232,7 @@
           Concrete tokens defined in <code>style.css</code> embodying the Elements of Art and Principles of Design:
         </p>
 
-        <!-- Color Swatch Grid -->
+        <!-- Color Swatch Grid 
         <div class="swatch-grid">
           <div class="swatch-card">
             <div class="swatch-color" style="background-color: #0B3C5D;"></div>
@@ -255,7 +267,7 @@
           </div>
         </div>
 
-        <!-- Typography & Radius Specimen Strip -->
+        <!-- Typography & Radius Specimen Strip 
         <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
           <div style="font-size: 0.9rem; color: var(--color-charcoal-muted);">
             <strong style="color: var(--color-ocean);">Heading Specimen (Fraunces Serif):</strong> "Sama-sama tayong titindig para sa kalikasan."
@@ -265,9 +277,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- DESIGN RATIONALE SECTION: Elements of Art & Principles Matrix -->
+    <!-- DESIGN RATIONALE SECTION: Elements of Art & Principles Matrix 
     <section class="section" style="padding-top: 0;" aria-labelledby="design-rationale-heading">
       <div class="container">
         <div style="max-width: 860px; margin: 0 auto;">
@@ -278,7 +290,7 @@
             Every visual decision in TINDIG was selected with rigorous adherence to foundational art and design tenets to communicate the urgency of the Philippine climate crisis:
           </p>
 
-          <!-- Matrix Table with Reveal Animation -->
+          <!-- Matrix Table with Reveal Animation 
           <div class="matrix-table-wrapper reveal-scale">
             <table class="matrix-table" aria-label="Elements of Art and Principles of Design Application Matrix">
               <thead>
@@ -349,7 +361,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -375,11 +387,11 @@
         </div>
 
         <div>
-          <h4 class="footer-heading">Academic Context</h4>
+          <h4 class="footer-heading">Project Mission</h4>
           <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
-            Digital Interface Design (DID301)<br>
-            Group Capstone Presentation<br>
-            Role Distribution & Design Matrix.
+            1. Raising awareness about climate change and its consequences<br>
+            2. Inspiring collective environmental action<br>
+            3. Advocating for a greener and more sustainable future.
           </p>
         </div>
       </div>
