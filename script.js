@@ -838,26 +838,66 @@ function initFaqAccordion() {
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const feedback = document.getElementById('contactFeedback');
-
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  const SUPABASE_URL = 'https://vrwjiazqhpiziupuiquo.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_omTrlXF1zdoNQAwA6mtkUA_eqPz_jwS';
+  const client = window.supabase?.createClient
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
+    : null;
 
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
-    const name = document.getElementById('contactName')?.value || 'Friend';
+    const name = document.getElementById('contactName')?.value.trim() || '';
+    const email = document.getElementById('contactEmail')?.value.trim() || '';
+    const inquiryType = document.getElementById('contactInquiryType')?.value || '';
+    const message = document.getElementById('contactMessage')?.value.trim() || '';
 
+    if (!client) {
+      if (feedback) {
+        feedback.textContent = 'Unable to connect to the message service. Please try again later.';
+        feedback.className = 'form-feedback error';
+        feedback.style.display = 'block';
+      }
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
     if (feedback) {
-      feedback.textContent = `Mabuhay ${name}! Thank you for reaching out to Tindig. Our student advocacy team will reply to your message within 48 hours.`;
-      feedback.className = 'form-feedback success';
+      feedback.textContent = 'Sending your message...';
+      feedback.className = 'form-feedback';
       feedback.style.display = 'block';
     }
 
-    form.reset();
+    try {
+      const { error } = await client
+        .from('contact_messages')
+        .insert([{ name, email, inquiry_type: inquiryType, message }]);
+
+      if (error) throw error;
+
+      if (feedback) {
+        feedback.textContent = `Mabuhay ${name}! Your message has been received by the TINDIG team.`;
+        feedback.className = 'form-feedback success';
+        feedback.style.display = 'block';
+      }
+      form.reset();
+    } catch (error) {
+      console.error('TINDIG contact form submission failed:', error);
+      if (feedback) {
+        feedback.textContent = 'Your message could not be sent. Please try again.';
+        feedback.className = 'form-feedback error';
+        feedback.style.display = 'block';
+      }
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
   });
 }
 
