@@ -467,48 +467,52 @@ function initPledgeTracker() {
   if (!checkboxes.length) return;
 
   const STORAGE_KEY = 'tindig_climate_pledges';
+  const SUPABASE_URL = 'https://vrwjiazqhpiziupuiquo.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_omTrlXF1zdoNQAwA6mtkUA_eqPz_jwS';
+
   let saved = [];
+  let supabaseClient = null;
+  let currentUserId = null;
+  let changedBeforeCloudLoad = false;
+  let saveQueue = Promise.resolve();
 
   try {
     saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    if (!Array.isArray(saved)) saved = [];
   } catch (e) {
     saved = [];
   }
 
-  checkboxes.forEach((cb, i) => {
-    if (saved.includes(i)) {
-      cb.checked = true;
-      cb.closest('.pledge-item')?.classList.add('checked');
-    }
-
-    cb.addEventListener('change', () => {
-      if (cb.checked) {
-        cb.closest('.pledge-item')?.classList.add('checked');
-      } else {
-        cb.closest('.pledge-item')?.classList.remove('checked');
-      }
-      saveAndRecalculate();
+  const getCheckedIndices = () => {
+    const indices = [];
+    checkboxes.forEach((cb, index) => {
+      if (cb.checked) indices.push(index);
     });
-  });
+    return indices;
+  };
 
-  const saveAndRecalculate = () => {
-    const checkedIndices = [];
-    checkboxes.forEach((cb, idx) => {
-      if (cb.checked) checkedIndices.push(idx);
+  const applyCheckedIndices = (indices) => {
+    const valid = Array.isArray(indices)
+      ? indices.filter(index => Number.isInteger(index) && index >= 0 && index < checkboxes.length)
+      : [];
+
+    checkboxes.forEach((cb, index) => {
+      cb.checked = valid.includes(index);
+      cb.closest('.pledge-item')?.classList.toggle('checked', cb.checked);
     });
+    recalculate(valid);
+  };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedIndices));
-
+  const recalculate = (checkedIndices = getCheckedIndices()) => {
     const total = checkboxes.length;
     const completed = checkedIndices.length;
-    const percent = Math.round((completed / total) * 100);
+    const percent = total ? Math.round((completed / total) * 100) : 0;
 
     if (progressText) progressText.textContent = `${percent}%`;
 
     if (progressCircle) {
       const circumference = 283;
-      const offset = circumference - (circumference * percent) / 100;
-      progressCircle.style.strokeDashoffset = offset;
+      progressCircle.style.strokeDashoffset = circumference - (circumference * percent) / 100;
     }
 
     if (celebrationBox) {
@@ -516,9 +520,99 @@ function initPledgeTracker() {
     }
   };
 
-  saveAndRecalculate();
-}
+  const saveLocal = (indices) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(indices));
+    } catch (error) {
+      console.warn('Unable to save pledge progress locally:', error);
+    }
+  };
 
+  const saveCloud = (indices) => {
+    if (!supabaseClient || !currentUserId) return;
+
+    const percent = checkboxes.length
+      ? Math.round((indices.length / checkboxes.length) * 100)
+      : 0;
+
+    // Serialize writes so rapid checkbox changes do not arrive out of order.
+    saveQueue = saveQueue
+      .then(() => supabaseClient
+        .from('youth_pledges')
+        .upsert({
+          user_id: currentUserId,
+          commitments: indices,
+          percent,
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id' }))
+      .then(({ error }) => {
+        if (error) throw error;
+      })
+      .catch(error => {
+        console.error('Could not sync pledge to Supabase:', error);
+      });
+  };
+
+  checkboxes.forEach((cb) => {
+    cb.addEventListener('change', () => {
+      cb.closest('.pledge-item')?.classList.toggle('checked', cb.checked);
+      const indices = getCheckedIndices();
+      changedBeforeCloudLoad = true;
+      saveLocal(indices);
+      recalculate(indices);
+      saveCloud(indices);
+    });
+  });
+
+  // Restore this browser's last state immediately while cloud data loads.
+  applyCheckedIndices(saved);
+
+  // Create/reuse a Supabase client and an anonymous session (no login form).
+  const connectAndRestore = async () => {
+    if (!window.supabase || !window.supabase.createClient) {
+      console.warn('Supabase library did not load; pledge progress is stored locally only.');
+      return;
+    }
+
+    try {
+      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+      let { data: sessionData, error: sessionError } = await supabaseClient.auth.getSession();
+      if (sessionError) throw sessionError;
+
+      if (!sessionData.session) {
+        const result = await supabaseClient.auth.signInAnonymously();
+        if (result.error) throw result.error;
+        sessionData = { session: result.data.session };
+      }
+
+      currentUserId = sessionData.session?.user?.id;
+      if (!currentUserId) throw new Error('No anonymous user session was created.');
+
+      const { data, error } = await supabaseClient
+        .from('youth_pledges')
+        .select('commitments')
+        .eq('user_id', currentUserId)
+        .maybeSingle();
+
+      if (error) throw error;
+
+      if (changedBeforeCloudLoad) {
+        saveCloud(getCheckedIndices());
+      } else if (data && Array.isArray(data.commitments)) {
+        applyCheckedIndices(data.commitments);
+        saveLocal(data.commitments);
+      } else if (saved.length) {
+        saveCloud(saved);
+      }
+    } catch (error) {
+      console.error('Supabase pledge connection failed:', error);
+      // The checklist remains usable with localStorage if cloud setup is incomplete.
+    }
+  };
+
+  connectAndRestore();
+}
 /* --------------------------------------------------------------------------
    12. Dynamic Action Impact Calculator (take-action.html)
    -------------------------------------------------------------------------- */
@@ -576,38 +670,136 @@ function initStorySubmission() {
 
   if (!form || !feed) return;
 
-  form.addEventListener('submit', (e) => {
+  const SUPABASE_URL = 'https://vrwjiazqhpiziupuiquo.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_omTrlXF1zdoNQAwA6mtkUA_eqPz_jwS';
+
+  let client = null;
+  let realtimeChannel = null;
+
+  const setFeedback = (message, type = 'success') => {
+    if (!feedback) return;
+    feedback.textContent = message;
+    feedback.className = `form-feedback ${type}`;
+    feedback.style.display = 'block';
+  };
+
+  const renderStory = (record, prepend = true) => {
+    if (!record || !record.id || feed.querySelector(`[data-supabase-story="${record.id}"]`)) return;
+
+    const card = document.createElement('div');
+    card.className = 'quote-bubble reveal revealed';
+    card.setAttribute('data-supabase-story', record.id);
+
+    const storyText = document.createTextNode(`“${record.story || ''}”`);
+    const author = document.createElement('span');
+    author.className = 'quote-author';
+    author.textContent = `— ${record.name || 'Community Member'}, ${record.location || 'Philippines'}`;
+
+    card.appendChild(storyText);
+    card.appendChild(author);
+
+    if (prepend) {
+      feed.prepend(card);
+    } else {
+      feed.appendChild(card);
+    }
+  };
+
+  const loadStories = async () => {
+    if (!client) return;
+
+    const { data, error } = await client
+      .from('community_stories')
+      .select('id, name, location, story, created_at')
+      .order('created_at', { ascending: false })
+      .limit(100);
+
+    if (error) throw error;
+
+    // Keep the page's original sample stories; cloud submissions are added above them.
+    (data || []).slice().reverse().forEach(record => renderStory(record, true));
+  };
+
+  const connectStories = async () => {
+    if (!window.supabase || !window.supabase.createClient) {
+      console.warn('Supabase library did not load; community stories cannot be shared online.');
+      return;
+    }
+
+    try {
+      client = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+      await loadStories();
+
+      realtimeChannel = client
+        .channel('tindig-community-stories')
+        .on(
+          'postgres_changes',
+          { event: 'INSERT', schema: 'public', table: 'community_stories' },
+          payload => renderStory(payload.new, true)
+        )
+        .subscribe();
+    } catch (error) {
+      console.error('Could not load community stories from Supabase:', error);
+      setFeedback('Community stories could not be loaded. Please check the database setup and try again.', 'error');
+    }
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const nameInput = document.getElementById('storyAuthorName');
     const locationInput = document.getElementById('storyAuthorLocation');
     const textInput = document.getElementById('storyContent');
 
-    const name = nameInput.value.trim() || 'Anonymous Volunteer';
-    const location = locationInput.value.trim() || 'Philippines';
-    const text = textInput.value.trim();
+    const name = nameInput?.value.trim() || '';
+    const location = locationInput?.value.trim() || '';
+    const story = textInput?.value.trim() || '';
 
-    if (!text) return;
-
-    const newCard = document.createElement('div');
-    newCard.className = 'quote-bubble reveal revealed';
-    newCard.innerHTML = `
-      "${escapeHtml(text)}"
-      <span class="quote-author">— ${escapeHtml(name)}, ${escapeHtml(location)} (Just shared)</span>
-    `;
-
-    feed.prepend(newCard);
-
-    if (feedback) {
-      feedback.textContent = 'Maraming salamat! Your story has been added to our collective community voice.';
-      feedback.className = 'form-feedback success';
-      feedback.style.display = 'block';
+    if (!name || !location || !story) {
+      setFeedback('Please complete all fields before publishing.', 'error');
+      return;
     }
 
-    form.reset();
-  });
-}
+    if (story.length > 3000 || name.length > 80 || location.length > 120) {
+      setFeedback('Please shorten your entry. Name: 80 characters, location: 120, story: 3,000.', 'error');
+      return;
+    }
 
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Publishing...';
+    }
+
+    try {
+      if (!client) {
+        throw new Error('The shared database is not connected. Please try again in a moment.');
+      }
+
+      const { data, error } = await client
+        .from('community_stories')
+        .insert({ name, location, story })
+        .select('id, name, location, story, created_at')
+        .single();
+
+      if (error) throw error;
+
+      renderStory(data, true);
+      form.reset();
+      setFeedback('Maraming salamat! Your story has been published for the community.', 'success');
+    } catch (error) {
+      console.error('Story submission failed:', error);
+      setFeedback(error.message || 'Sorry, your story could not be published. Please try again.', 'error');
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Publish to Community Voice Board';
+      }
+    }
+  });
+
+  connectStories();
+}
 function escapeHtml(str) {
   return str.replace(/[&<>"']/g, (m) => ({
     '&': '&amp;',
